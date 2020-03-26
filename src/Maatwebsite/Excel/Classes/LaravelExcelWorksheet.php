@@ -718,7 +718,7 @@ class LaravelExcelWorksheet extends PHPExcel_Worksheet {
         $caller = $this->getDefaultStyle();
         $params = is_array($params) ? $params : [$params];
 
-        if (str_contains($key, 'font'))
+        if (\Str::contains($key, 'font'))
             return $this->setFontStyle($caller, $setter, $key, $params);
 
         return call_user_func_array([$caller, $setter], $params);
